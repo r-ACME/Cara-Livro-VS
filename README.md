@@ -1,2 +1,2 @@
-# Cara-Livro-VS
-Trabalho em C feito no Visual Studio
+# Cara-livro-project
+Trabalho do COLTEC para que os alunos projetem um sistema em C de formato de rede social

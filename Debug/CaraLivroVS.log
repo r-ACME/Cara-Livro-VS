@@ -1,0 +1,63 @@
+﻿  caralivrocadastro.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\util.h(17,1): warning C4005: 'VERDADEIRO': redefinição de macro
+D:\Documentos\UFMG\Coltec\CaraLivroVS\define.h(10,1): message : consulte a definição anterior de 'VERDADEIRO'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\util.h(19,1): warning C4005: 'FALSO': redefinição de macro
+D:\Documentos\UFMG\Coltec\CaraLivroVS\define.h(11,1): message : consulte a definição anterior de 'FALSO'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\caralivrocadastro.c(47,8): warning C4013: 'grafo_insere_ordenado' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\caralivrocadastro.c(41,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Documentos\UFMG\Coltec\CaraLivroVS\caralivrocadastro.c(42,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Documentos\UFMG\Coltec\CaraLivroVS\caralivrocadastro.c(43,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  caralivromain.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\caralivromain.c(19,9): warning C4013: 'clearscreen' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\caralivromain.c(28,9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  caralivropattern.c
+  data.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(30,33): warning C4047: 'função': 'const char *' difere em níveis de indireção de 'char **'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(30,29): warning C4024: 'strcmp': tipos diferentes para parâmetro formal e real 2
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(31,44): warning C4047: 'função': 'const char *' difere em níveis de indireção de 'char **'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(31,36): warning C4024: 'strcmp': tipos diferentes para parâmetro formal e real 2
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(43,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(44,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(45,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(96,37): warning C4047: 'função': 'pointer_t **' difere em níveis de indireção de 'pointer_t *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(96,27): warning C4024: 'cria_pointer': tipos diferentes para parâmetro formal e real 1
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(145,23): warning C4047: 'função': 'char *' difere em níveis de indireção de 'char (*)[256]'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(145,12): warning C4024: 'strcpy': tipos diferentes para parâmetro formal e real 1
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(145,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(196,21): error C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  graph.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\graph.c(40,35): warning C4133: 'função': tipos incompatíveis - de 'pointer_t *' para 'const char *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\graph.c(40,42): warning C4047: 'função': 'const char *' difere em níveis de indireção de 'char **'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\graph.c(40,37): warning C4024: 'strcmp': tipos diferentes para parâmetro formal e real 2
+D:\Documentos\UFMG\Coltec\CaraLivroVS\graph.c(41,38): warning C4133: 'return': tipos incompatíveis - de 'pointer_t *' para 'profile_t *'
+  hash.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\hash.c(38,41): warning C4047: '=': 'hash_likes_t **' difere em níveis de indireção de 'hash_likes_t *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\hash.c(55,39): warning C4047: 'função': 'lista_likes_t **' difere em níveis de indireção de 'lista_likes_t *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\hash.c(55,32): warning C4024: 'lista_cria_like': tipos diferentes para parâmetro formal e real 1
+  lista.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(68,35): warning C4474: 'printf': excesso de argumentos transmitidos para cadeia de caracteres de formato
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(68,35): message : espaços reservados e seus parâmetros esperam 0 argumentos variadic, mas 1 foram fornecidos
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(85,35): warning C4474: 'printf': excesso de argumentos transmitidos para cadeia de caracteres de formato
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(85,35): message : espaços reservados e seus parâmetros esperam 0 argumentos variadic, mas 1 foram fornecidos
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(103,41): warning C4133: 'função': tipos incompatíveis - de 'post_t *' para 'date_t *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(224,24): warning C4133: 'função': tipos incompatíveis - de 'my_posts_t *' para 'post_t *'
+  main.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(11,21): warning C4013: 'time' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(24,5): warning C4013: 'strcpy' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(32,5): warning C4013: 'grafo_insere_ordenado' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(35,9): warning C4013: 'clearscreen' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(49,21): warning C4013: 'signin' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(59,17): warning C4013: 'uteis_removeQuebraLinhaFinal' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(65,35): warning C4013: 'busca_perfil' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(69,44): warning C4047: 'função': 'char **' difere em níveis de indireção de 'char [101]'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(69,39): warning C4024: 'valida_senha': tipos diferentes para parâmetro formal e real 2
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(69,54): warning C4047: 'função': 'char **' difere em níveis de indireção de 'char [101]'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(69,46): warning C4024: 'valida_senha': tipos diferentes para parâmetro formal e real 3
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(70,21): warning C4013: 'mainpage' indefinido; assumindo extern retornando int
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(43,9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(65,28): warning C4047: 'inicializando': 'profile_t *' difere em níveis de indireção de 'int'
+  util.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\util.c(55,3): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Gerando Código...
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(44): warning C4716: 'lista_cria_like': deve retornar um valor
+D:\Documentos\UFMG\Coltec\CaraLivroVS\lista.c(31): warning C4716: 'lista_cria': deve retornar um valor
