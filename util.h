@@ -31,5 +31,6 @@ void uteis_removeQuebraLinhaFinal(char texto[]);
 void uteis_imprimeTracinhos(int nTracinhos);
 void uteis_converteInteiroParaTexto(int numero, char texto[]);
 int uteis_converteTextoParaInteiro(char numeroTexto[]);
+char* monta_user(int numero);
 
 #endif // UTIL_H_INCLUDED

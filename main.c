@@ -5,6 +5,7 @@
 #include "caralivromain.h"
 #include "graph.h"
 #include "data.h"
+#include "util.h"
 
 int main()
 {
@@ -20,7 +21,7 @@ int main()
     graph.qtd_profiles = 0;
     aloca_vetor_grafo(&graph, MAX_SIZE);
 
-    profile_t admin;
+    profile_t admin, user[PRE_SET_USER];
 
     admin.id = 0;
     strcpy(admin.name, "admin");
@@ -29,15 +30,25 @@ int main()
     admin.deleted = FALSO;
     admin.posts = NULL;
 
-    //cria_grafo(&graph);
-
     grafo_insere_ordenado( &graph, &admin);
 
+    for (int u = 0; u <= PRE_SET_USER; u++) {
+        user[u].id = last_valid_id(&graph);
+        strcpy(user[u].name, monta_user(u));
+        strcpy(user[u].login, monta_user(u));
+        strcpy(user[u].password, monta_user(u));
+        user[u].deleted = FALSO;
+        user[u].posts = NULL;
+
+        grafo_insere_ordenado(&graph, &user[u]);
+    }
     while (opcao != 0){
         clearscreen();
 
-        /*for (int i = 0; i < graph.qtd_profiles; i++)
-            printf("\n\nCadastro %i: %s\n", i + 1, graph.profiles[i]->person->name);*/
+        if (MOSTRA_USER) {
+            for (int i = 0; i < graph.qtd_profiles; i++)
+                printf("\n\nCadastro %i: %s\nSituação: %d\n", i + 1, graph.profiles[i]->person->name, graph.profiles[i]->person->deleted);
+        }//*/
 
         header(NULL);
 
@@ -72,9 +83,10 @@ int main()
 
                 fflush(stdin);
                 profile_t *user = busca_perfil(&graph, &login);
+                pointer_t *user_pointer = busca_pointer(&graph, user->id);
 
                 if(valida_senha(user, login, password)){
-                    mainpage(&graph, user);
+                    mainpage(&graph, user_pointer);
                 }
                 else{
                     printf("\nLogin ou senha invalida!!");

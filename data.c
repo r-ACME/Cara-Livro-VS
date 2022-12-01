@@ -11,6 +11,7 @@
 #include <string.h>
 #include <time.h>
 #include "data.h"
+#include "lista.h"
 
 
 /*
@@ -26,6 +27,9 @@ bool_t valida_senha(profile_t *login, char *user[TAM_MAX], char *password[TAM_MA
     if(login == NULL){
         return FALSO;
     }
+
+    if (login->deleted == VERDADEIRO)
+        return FALSO;
 
     if(strcmp(login->login, user) == 0){
         if(strcmp(login->password, password) == 0){
@@ -59,18 +63,44 @@ bool_t cria_perfil(profile_t **profile){
     return VERDADEIRO;
 }
 
-bool_t preenche_profile_list(profile_list_t *profile_list, profile_list_t new_profile_list){
-    if(profile_list->next_friend == NULL){
-        profile_list->my_friend = malloc(sizeof(pointer_t));
-       // preenche_pointer(profile_list->my_friend, (*new_profile_list)->my_friend->person);
-        profile_list->qtd_friends++;
-        profile_list->next_friend = NULL;
-        return VERDADEIRO;
+bool_t deleta_perfil(profile_t** profile) {
+
+    (*profile)->deleted = VERDADEIRO;
+    strcpy((*profile)->login, "");
+}
+
+bool_t preenche_profile_list(profile_list_t **profile_list, pointer_t *new_profile_list){
+    
+    profile_list_t* current = (*profile_list);
+    profile_list_t* previous = NULL;
+
+    while (current != NULL && current->my_friend->person->id > new_profile_list->person->id) {
+        previous = current;
+        current = current->next_friend;
     }
-    else{
-        return preenche_profile_list(profile_list->next_friend, new_profile_list);
+
+    profile_list_t* new;
+    cria_profile_list(&new);
+    lista_adiciona_amigo(new, new_profile_list);
+
+    if (current != NULL) {
+        if (current->my_friend->person->id == new_profile_list->person->id) {
+            printf("Usuario ja adicionado!");
+            return FALSO;
+        }
     }
-    return FALSO;
+
+    if (previous == NULL) {
+        new->next_friend = (*profile_list);
+        (*profile_list) = new;
+    }
+    else {
+        previous->next_friend = new;
+        new->next_friend = current;
+    }
+
+    return VERDADEIRO;
+    
 }
 
 bool_t cria_profile_list(profile_list_t **profile_list){

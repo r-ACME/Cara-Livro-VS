@@ -52,14 +52,36 @@ bool_t aloca_vetor_grafo(graph_t* graph, int size) {
         return FALSO;
 
     for (int i = 0; i < size; i++) {
-        graph->profiles[i] = malloc(sizeof(profile_t));
-        cria_perfil(graph->profiles[i]);
+        graph->profiles[i] = malloc(sizeof(pointer_t));
+        graph->profiles[i]->friends_list = NULL;
+        graph->profiles[i]->qtd_friends = 0;
+        cria_perfil(&graph->profiles[i]->person);
     }
 
     return VERDADEIRO;
 }
 
 
+pointer_t* busca_pointer(graph_t* graph, int id) {
+
+    if((*graph).profiles[id]->person->deleted)
+        return NULL;
+        
+    return ( (*graph).profiles[id] );
+}
+
+
+bool_t* busca_amigo(profile_list_t *amigos, int id) {
+
+    profile_list_t* current = amigos;
+
+    while (current != NULL) {
+        if (current->my_friend->person->id == id)
+            return VERDADEIRO;
+        current = current->next_friend;
+    }
+    return FALSO;
+}
 
 
 

@@ -63,3 +63,10 @@ void uteis_converteInteiroParaTexto(int numero, char texto[]) {
 int uteis_converteTextoParaInteiro(char numeroTexto[]) {
   return atoi(numeroTexto);
 }
+
+
+char* monta_user(int numero) {
+    char num = numero + '0';
+    char user[] = {'u', 's', 'e', 'r', num, '\0'};
+    return user;
+}

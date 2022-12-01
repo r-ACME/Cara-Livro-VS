@@ -78,11 +78,10 @@ struct profile_s{ //Estrutura para armazenar um usuário
 
 struct profile_list_s{ //Estrutura para armazenar a lista de amigos do usuários
     pointer_t *my_friend;
-    int qtd_friends;
     profile_list_t *next_friend;
 };
 
-struct pointer_s{
+struct pointer_s{ //Vertice
     profile_t *person;
     profile_list_t *friends_list;
     int qtd_friends;
@@ -90,7 +89,7 @@ struct pointer_s{
 
 struct graph_s{
     int qtd_profiles; ///4int
-    pointer_t *profiles[MAX_SIZE];  ////4 ponteiro
+    pointer_t *profiles[MAX_SIZE];
 };
 
 
@@ -100,7 +99,7 @@ int last_valid_id(graph_t *graph);
 bool_t valida_senha(profile_t *login, char *user[TAM_MAX], char *password[TAM_MAX_SENHA]);
 bool_t preenche_perfil(profile_t* profile, profile_t new_profile);
 bool_t cria_perfil(profile_t** profile);
-bool_t preenche_profile_list(profile_list_t *profile_list, profile_list_t new_profile_list);
+bool_t preenche_profile_list(profile_list_t **profile_list, pointer_t *new_profile_list);
 bool_t cria_profile_list(profile_list_t **profile_list);
 bool_t preenche_pointer(pointer_t* pointer[], profile_t new_pointer);
 bool_t cria_pointer(pointer_t** pointer);
@@ -112,6 +111,6 @@ bool_t grava_like(likes_t *novo, likes_t new_like);
 bool_t preenche_data(date_t * date, date_t new_date);
 bool_t preenche_data_post(date_t *date);
 bool_t imprime_data_post(date_t *date);
-
+bool_t deleta_perfil(profile_t** profile);
 
 #endif // DATA_H_INCLUDED

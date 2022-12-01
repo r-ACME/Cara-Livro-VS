@@ -1,13 +1,18 @@
-﻿  main.c
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(13,21): warning C4013: 'time' indefinido; assumindo extern retornando int
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(26,5): warning C4013: 'strcpy' indefinido; assumindo extern retornando int
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(37,9): warning C4013: 'clearscreen' indefinido; assumindo extern retornando int
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(55,21): warning C4013: 'signin' indefinido; assumindo extern retornando int
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(66,17): warning C4013: 'uteis_removeQuebraLinhaFinal' indefinido; assumindo extern retornando int
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(74,62): warning C4047: 'função': 'char **' difere em níveis de indireção de 'char (*)[101]'
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(74,56): warning C4024: 'busca_perfil': tipos diferentes para parâmetro formal e real 2
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(76,44): warning C4047: 'função': 'char **' difere em níveis de indireção de 'char [101]'
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(76,39): warning C4024: 'valida_senha': tipos diferentes para parâmetro formal e real 2
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(76,54): warning C4047: 'função': 'char **' difere em níveis de indireção de 'char [101]'
-D:\Documentos\UFMG\Coltec\CaraLivroVS\main.c(76,46): warning C4024: 'valida_senha': tipos diferentes para parâmetro formal e real 3
+﻿  data.c
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(34,33): warning C4047: 'função': 'const char *' difere em níveis de indireção de 'char **'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(34,29): warning C4024: 'strcmp': tipos diferentes para parâmetro formal e real 2
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(35,44): warning C4047: 'função': 'const char *' difere em níveis de indireção de 'char **'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(35,36): warning C4024: 'strcmp': tipos diferentes para parâmetro formal e real 2
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(129,35): warning C4047: 'função': 'profile_t **' difere em níveis de indireção de 'profile_t *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(129,27): warning C4024: 'cria_perfil': tipos diferentes para parâmetro formal e real 1
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(138,75): warning C4047: '=': 'pointer_t **' difere em níveis de indireção de 'pointer_t *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(143,48): warning C4047: 'função': 'profile_t **' difere em níveis de indireção de 'profile_t *'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(143,41): warning C4024: 'cria_perfil': tipos diferentes para parâmetro formal e real 1
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(158,38): warning C4047: 'função': 'pointer_t **' difere em níveis de indireção de 'pointer_t *(*)[1000]'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(158,19): warning C4024: 'cria_pointer': tipos diferentes para parâmetro formal e real 1
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(194,23): warning C4047: 'função': 'char *' difere em níveis de indireção de 'char (*)[256]'
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(194,12): warning C4024: 'strcpy': tipos diferentes para parâmetro formal e real 1
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(70): warning C4716: 'deleta_perfil': deve retornar um valor
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(123): warning C4716: 'preenche_pointer': deve retornar um valor
+D:\Documentos\UFMG\Coltec\CaraLivroVS\data.c(261): warning C4715: 'imprime_data_post': nem todos os caminhos de controle retornam um valor
   CaraLivroVS.vcxproj -> D:\Documentos\UFMG\Coltec\CaraLivroVS\x64\Debug\CaraLivroVS.exe

@@ -292,3 +292,8 @@ bool_t lista_remove_like(lista_likes_t *likes, likes_t like_to_remove) {
 
 
 
+bool_t lista_adiciona_amigo(profile_list_t* profile_list, pointer_t *new_friend) {
+
+    (*profile_list).my_friend = new_friend;
+    (*profile_list).next_friend = NULL;
+}

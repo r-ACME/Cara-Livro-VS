@@ -12,13 +12,14 @@
 #include "define.h"
 #include "data.h"
 #include "util.h"
+#include "graph.h"
 #include "caralivropattern.h"
 #include "caralivrocadastro.h"
 
 bool_t signin(graph_t *graph){
 
     clearscreen();
-    header();
+    header(NULL);
     char name[TAM_MAX], login[TAM_MAX], password[TAM_MAX];
 
     printf("\nInforme o seu nome: ");
@@ -44,8 +45,15 @@ bool_t signin(graph_t *graph){
     new_user.deleted = FALSO;
     new_user.posts = NULL;
 
-    if(grafo_insere_ordenado(graph, &new_user)){
-        return VERDADEIRO;
+    profile_t* user = busca_perfil(graph, new_user.login);
+    if (user == NULL) {
+        if (grafo_insere_ordenado(graph, &new_user)) {
+            return VERDADEIRO;
+        }
+    }
+    else {
+        printf("Usuario ja cadastrado!!");
+        getchar();
     }
     return FALSO;
 }

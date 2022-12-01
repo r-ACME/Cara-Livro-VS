@@ -11,6 +11,8 @@
 #define FALSO !VERDADEIRO
 #define MAX_PATTERN_HASH 100
 #define MAX_SIZE 1000
+#define PRE_SET_USER 30
+#define MOSTRA_USER FALSO
 
 
 

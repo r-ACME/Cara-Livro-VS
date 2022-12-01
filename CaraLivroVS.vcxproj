@@ -74,7 +74,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -134,6 +134,7 @@
     <ClInclude Include="caralivrocadastro.h" />
     <ClInclude Include="caralivromain.h" />
     <ClInclude Include="caralivropattern.h" />
+    <ClInclude Include="caralivroverusuarios.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="graph.h" />
@@ -145,6 +146,7 @@
     <ClCompile Include="caralivrocadastro.c" />
     <ClCompile Include="caralivromain.c" />
     <ClCompile Include="caralivropattern.c" />
+    <ClCompile Include="caralivroverusuarios.c" />
     <ClCompile Include="data.c" />
     <ClCompile Include="graph.c" />
     <ClCompile Include="hash.c" />

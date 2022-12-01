@@ -7,14 +7,13 @@
 #include <stdlib.h>
 #include "define.h"
 #include "caralivropattern.h"
-#include "caralivromain.h"
 #include "graph.h"
 #include "data.h"
 
 
 /* Funções exportadas */
 
-void mainpage(graph_t* graph, profile_t* loged_user);
+void mainpage(graph_t* graph, pointer_t* loged_user);
 
 
 

@@ -16,12 +16,12 @@
 /*
  * Função para imprimir cabeçalho
  */
-void header(profile_t *profile){
+void header(pointer_t *logged_user){
 
-    if(profile == NULL)
+    if(logged_user == NULL)
         printf("\n\nBem Vindo ao\n\n");
     else
-        printf("\n\nSeja Bem Vindo %s\n\n", profile->name);
+        printf("\n\nSeja Bem Vindo %s\n\n", logged_user->person->name);
     printf("+-----------------------+\n");
     printf("|       Cara-Livro      |\n");
     printf("+-----------------------+\n");
