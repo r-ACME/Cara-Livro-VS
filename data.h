@@ -100,6 +100,7 @@ bool_t valida_senha(profile_t *login, char *user[TAM_MAX], char *password[TAM_MA
 bool_t preenche_perfil(profile_t* profile, profile_t new_profile);
 bool_t cria_perfil(profile_t** profile);
 bool_t preenche_profile_list(profile_list_t **profile_list, pointer_t *new_profile_list);
+bool_t remove_profile_list(profile_list_t** profile_list, int id);
 bool_t cria_profile_list(profile_list_t **profile_list);
 bool_t preenche_pointer(pointer_t* pointer[], profile_t new_pointer);
 bool_t cria_pointer(pointer_t** pointer);

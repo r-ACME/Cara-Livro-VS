@@ -14,6 +14,7 @@
 #include "caralivropattern.h"
 #include "caralivrocadastro.h"
 #include "caralivroverusuarios.h"
+#include "caralivroveramigos.h"
 
 void mainpage(graph_t *graph, pointer_t *loged_user){
     int opcao = -1, indice = 0, item = 0;
@@ -40,7 +41,9 @@ void mainpage(graph_t *graph, pointer_t *loged_user){
             case 2:
 
                 break;
-
+            case 3:
+                ver_amigos(graph, loged_user, loged_user);
+                break;
             case 8:
                 lista_usuarios(graph, loged_user);
                 break;

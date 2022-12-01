@@ -45,6 +45,9 @@
     <ClInclude Include="caralivroverusuarios.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="caralivroveramigos.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="caralivrocadastro.c">
@@ -75,6 +78,9 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="caralivroverusuarios.c">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="caralivroveramigos.c">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>

@@ -103,6 +103,38 @@ bool_t preenche_profile_list(profile_list_t **profile_list, pointer_t *new_profi
     
 }
 
+bool_t remove_profile_list(profile_list_t** profile_list, int id) {
+    profile_list_t* current = (*profile_list);
+    profile_list_t* previous = NULL;
+
+    while (current != NULL && current->my_friend->person->id > id) {
+        previous = current;
+        current = current->next_friend;
+    }
+
+    if (previous == NULL) {
+        if (current != NULL) {
+            if ((*current).my_friend->person->id == id) {
+                (*profile_list) = NULL;
+                free(current);
+                return VERDADEIRO;
+            }
+        }
+    }
+    else {
+        if (current != NULL) {
+            if ((*current).my_friend->person->id == id) {
+                previous = current->next_friend;
+                free(current);
+                return VERDADEIRO;
+            }
+        }
+    }
+    printf("\nUsuario nao encontrado!");
+    getchar();
+    return FALSO;
+}
+
 bool_t cria_profile_list(profile_list_t **profile_list){
 
     (*profile_list) = (profile_list_t *) malloc(sizeof(profile_list_t));

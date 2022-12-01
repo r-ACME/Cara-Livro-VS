@@ -42,6 +42,7 @@ int main()
 
         grafo_insere_ordenado(&graph, &user[u]);
     }
+
     while (opcao != 0){
         clearscreen();
 

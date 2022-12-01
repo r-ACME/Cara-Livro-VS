@@ -40,5 +40,6 @@ bool_t lista_insere_inicio_post(my_posts_t *posts, post_t* new_post);
 bool_t lista_insere_ordenado_like(lista_likes_t *likes, likes_t new_like);
 bool_t lista_remove_like(lista_likes_t *likes, likes_t like_to_remove);
 bool_t lista_adiciona_amigo(profile_list_t* profile_list, pointer_t* new_friend);
+bool_t lista_amigos(profile_list_t* friends_list);
 
 #endif // LISTA_H_INCLUDED
