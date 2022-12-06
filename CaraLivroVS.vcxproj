@@ -134,6 +134,7 @@
     <ClInclude Include="caralivrocadastro.h" />
     <ClInclude Include="caralivromain.h" />
     <ClInclude Include="caralivropattern.h" />
+    <ClInclude Include="caralivropostagens.h" />
     <ClInclude Include="caralivroveramigos.h" />
     <ClInclude Include="caralivroverusuarios.h" />
     <ClInclude Include="data.h" />
@@ -147,6 +148,7 @@
     <ClCompile Include="caralivrocadastro.c" />
     <ClCompile Include="caralivromain.c" />
     <ClCompile Include="caralivropattern.c" />
+    <ClCompile Include="caralivropostagens.c" />
     <ClCompile Include="caralivroveramigos.c" />
     <ClCompile Include="caralivroverusuarios.c" />
     <ClCompile Include="data.c" />

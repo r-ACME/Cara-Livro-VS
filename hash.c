@@ -23,21 +23,30 @@
  * @return Verdadeiro para conseguiu criar, falso para não.
  */
 bool_t hash_cria(hash_likes_t **my_hash, int pattern_size) {
-    //(*my_hash) = malloc(sizeof(hash_likes_t));
 
-    hash_likes_t **temp = my_hash;
-
-    (*temp) = malloc(sizeof(hash_likes_t));
+    hash_likes_t *current = (*my_hash);
+    hash_likes_t *previous = NULL;
 
     for(int i = 0; i < pattern_size; i++){
-        (*temp)->size_pattern = pattern_size;
-        (*temp)->pattern = i;
-        (*temp)->likes = 0;
+        current = malloc(sizeof(hash_likes_t*));
+        
+        if (previous != NULL) {
+            previous->next_pattern = current;
+        }
+        current->size_pattern = pattern_size;
+        current->pattern = i;
+        current->likes = NULL;
+        current->qtd_likes = 0;
+        current->next_pattern = NULL;
+        if (current != NULL && previous == NULL) {
+            (*my_hash) = current;
+        }
         if(i != (pattern_size - 1)){
-            (*temp)->next_pattern = malloc(sizeof(hash_likes_t));
-            temp = (*temp)->next_pattern;
+            previous = current;
+            current = current->next_pattern;
         }
     }
+
     return VERDADEIRO;
 }
 

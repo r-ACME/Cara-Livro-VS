@@ -19,7 +19,7 @@
  */
 
 
-int last_valid_id(graph_t *graph){
+int last_valid_id(graph_t* graph) {
     return graph->qtd_profiles;
 }
 
@@ -124,7 +124,7 @@ bool_t remove_profile_list(profile_list_t** profile_list, int id) {
     else {
         if (current != NULL) {
             if ((*current).my_friend->person->id == id) {
-                previous = current->next_friend;
+                previous->next_friend = current->next_friend;
                 free(current);
                 return VERDADEIRO;
             }
@@ -201,33 +201,69 @@ bool_t cria_grafo(graph_t **graph){
  * Funções para struct de postagem
  */
 
- /* Função não será mais utilizada pois será utilizado um campo para contar as curtidas
-int conta_likes(hash_likes_t *recived){
-    likes_t *current = recived->user;
-    hash_likes_t *next = recived->next_like;
+int last_valid_id_post(my_posts_t * posts) {
+    return posts->qtd_posts;
+}
 
-    if(current == NULL){
-        return 0;
-    }
-    int count = 0;
+bool_t cria_posts_list(my_posts_t **my_posts) {
 
-    while(next != NULL){
-        if( (*current).like)
-            count++;
-        current = (*next).user;
-        next = (*next).next_like;
-    }
-    return count;
-}*/
+    (*my_posts) = malloc(sizeof(my_posts_t*));
+    (*my_posts)->qtd_posts = 0;
+    (*my_posts)->my_post = NULL;
+    (*my_posts)->next_post = NULL;
+    (*my_posts)->prev_post = NULL;
 
-bool_t grava_post(post_t *novo, post_t *new_post){
+    return VERDADEIRO;
+}
 
-    novo->id = new_post->id;
-    strcpy(&novo->info, new_post->info);
-    novo->post_likes = (hash_likes_t *) malloc(sizeof(hash_likes_t));
-    if(preenche_data_post(&novo->publish_at) == FALSO)
+bool_t grava_post(post_t **novo, post_t *new_post){
+
+    post_t* current = (*novo);
+        
+    if(current == NULL)
+        cria_post(&current);
+
+    current->id = new_post->id;
+    strcpy(current->info, new_post->info);
+    
+    current->post_likes = (hash_likes_t *) malloc(sizeof(hash_likes_t));
+    
+    if(preenche_data_post(&current->publish_at) == FALSO)
         return FALSO;
-    novo->active = VERDADEIRO;
+    current->active = VERDADEIRO;
+
+    (*novo) = current;
+
+    return VERDADEIRO;
+}
+
+bool_t cria_post(post_t** post) {
+    (*post) = malloc(sizeof(post_t*));
+    return VERDADEIRO;
+}
+
+bool_t grava_new_post(my_posts_t **my_posts, post_t *new_post) {
+
+    my_posts_t* current = (*my_posts);
+    my_posts_t* previous = NULL;
+
+    while (current != NULL) {
+        previous = current;
+        current = current->next_post;
+    }
+
+    if (previous == NULL) {
+        if(current == NULL)
+            cria_posts_list(&current);
+    }
+    else {
+        if (current == NULL)
+            cria_posts_list(&current);
+        previous->next_post = current;
+    }
+    grava_post(current->my_post, new_post);
+    (*my_posts) = current;
+    (*my_posts)->qtd_posts++;
 
     return VERDADEIRO;
 }

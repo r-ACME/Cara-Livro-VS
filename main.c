@@ -32,7 +32,7 @@ int main()
 
     grafo_insere_ordenado( &graph, &admin);
 
-    for (int u = 0; u <= PRE_SET_USER; u++) {
+    for (int u = 0; u < PRE_SET_USER; u++) {
         user[u].id = last_valid_id(&graph);
         strcpy(user[u].name, monta_user(u));
         strcpy(user[u].login, monta_user(u));

@@ -60,10 +60,8 @@ void lista_usuarios(graph_t* graph, pointer_t* loged_user) {
 		default:
 			if ((*graph).profiles[quantidade * limite + opcao]->person != NULL) {
 				if ((*graph).profiles[quantidade * limite + opcao]->person->deleted == FALSO) {
-					pointer_t *new_friend = busca_pointer(graph, (quantidade * limite + opcao) );
 
-					/*if ((*loged_user).friends_list == NULL)
-						cria_profile_list(&(*loged_user).friends_list);//*/
+					pointer_t *new_friend = busca_pointer(graph, (quantidade * limite + opcao) );
 					preenche_profile_list( &(loged_user->friends_list) , new_friend);
 					(*loged_user).qtd_friends++;
 				}

@@ -13,6 +13,7 @@
 #define MAX_SIZE 1000
 #define PRE_SET_USER 30
 #define MOSTRA_USER FALSO
+#define HASH_PATTERN 10
 
 
 

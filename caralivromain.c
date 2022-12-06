@@ -15,6 +15,7 @@
 #include "caralivrocadastro.h"
 #include "caralivroverusuarios.h"
 #include "caralivroveramigos.h"
+#include "caralivropostagens.h"
 
 void mainpage(graph_t *graph, pointer_t *loged_user){
     int opcao = -1, indice = 0, item = 0;
@@ -23,10 +24,10 @@ void mainpage(graph_t *graph, pointer_t *loged_user){
         clearscreen();
         header(loged_user);
 
-        printf("\n1 - Pagina Inicial");
-        printf("\n2 - Meu Perfil");
+        printf("\n1 - Fazer uma Postagem");
+        printf("\n2 - Minhas Postagens");
         printf("\n3 - Lista de Amigos");
-        printf("\n8 - Ver usuários");
+        printf("\n8 - Ver usuarios");
         printf("\n9 - Apagar a conta");
         printf("\n\n0 - Sair");
         printf("\n---> ");
@@ -36,7 +37,7 @@ void mainpage(graph_t *graph, pointer_t *loged_user){
 
         switch(opcao){
             case 1:
-
+                criar_postagem(loged_user);
                 break;
             case 2:
 

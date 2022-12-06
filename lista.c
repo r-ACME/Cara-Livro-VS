@@ -303,7 +303,8 @@ bool_t lista_amigos(profile_list_t* friends_list) {
 
     profile_list_t* current = friends_list;
     while (current != NULL) {
-        printf("\n%i - %s", current->my_friend->person->id, current->my_friend->person->name);
+        if(current->my_friend->person->deleted == FALSO)
+            printf("\n%i - %s", current->my_friend->person->id, current->my_friend->person->name);
         current = current->next_friend;
     }
 
