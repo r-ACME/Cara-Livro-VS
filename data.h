@@ -56,7 +56,6 @@ struct my_posts_s{ //Estrutura para relacionar as publicações com um usuário
     my_posts_t *prev_post;
     post_t *my_post;
     my_posts_t *next_post;
-    int qtd_posts;
 };
 
 typedef struct profile_s profile_t;
@@ -71,6 +70,7 @@ struct profile_s{ //Estrutura para armazenar um usuário
     char login[TAM_MAX];
     char password[TAM_MAX_SENHA];
     my_posts_t *posts;
+    int qtd_posts;
     bool_t deleted;
 };
 
@@ -107,7 +107,7 @@ bool_t cria_pointer(pointer_t** pointer);
 bool_t realoca_pointer(pointer_t* pointer[], int qtd_profiles);
 bool_t preenche_grafo(pointer_t* pointer[], int qtd_profiles, profile_t* new_profile);
 bool_t cria_grafo(graph_t** graph);
-int last_valid_id_post(my_posts_t* posts);
+int last_valid_id_post(profile_t* profile);
 bool_t cria_posts_list(my_posts_t** my_posts);
 bool_t cria_post(post_t** post);
 bool_t grava_new_post(my_posts_t** my_posts, post_t* new_post);

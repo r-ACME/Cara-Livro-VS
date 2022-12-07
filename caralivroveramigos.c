@@ -63,13 +63,13 @@ void ver_amigos(graph_t* graph, pointer_t* loged_user, pointer_t* current_friend
 				if (subopcao == -1) {
 					continue;
 				}
-				if (subopcao == 1) {
+				else if (subopcao == 1) {
 					ver_amigos(graph, loged_user, new_friend);
 				}
-				if (subopcao == 2) {
-					lista_imprime_posts((*current_friend).person->posts);
+				else if (subopcao == 2) {
+					ver_curtir_postagens(loged_user, new_friend);					
 				}
-				if (subopcao == 3){
+				else if (subopcao == 3){
 					if ((*current_friend).person->id == (*loged_user).person->id) {
 						remove_profile_list(&loged_user->friends_list, opcao);
 						(*loged_user).qtd_friends--;

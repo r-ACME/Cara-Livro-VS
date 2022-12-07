@@ -14,6 +14,9 @@
 #define PRE_SET_USER 30
 #define MOSTRA_USER FALSO
 #define HASH_PATTERN 10
+#define BASE_YEAR 1900
+#define MONTH_CORRECTION 1
+#define TIME_ZONE -3
 
 
 

@@ -28,7 +28,7 @@
 
 bool_t lista_cria(my_posts_t **lista);
 bool_t lista_cria_like(lista_likes_t **lista);
-bool_t lista_estaVazia(my_posts_t posts);
+bool_t lista_estaVazia(my_posts_t *posts);
 bool_t imprime_post_ativo(post_t *publish);
 bool_t imprime_post_desativado(post_t *publish);
 bool_t lista_imprime_posts(my_posts_t *user);

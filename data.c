@@ -50,6 +50,7 @@ bool_t preenche_perfil(profile_t *profile, profile_t new_profile){
     strcpy((*profilenew).login, new_profile.login );
     strcpy((*profilenew).password, new_profile.password);
     (*profilenew).posts = NULL;
+    (*profilenew).qtd_posts = 0;
     (*profilenew).deleted = FALSO;
 
     return VERDADEIRO;
@@ -201,14 +202,13 @@ bool_t cria_grafo(graph_t **graph){
  * Funções para struct de postagem
  */
 
-int last_valid_id_post(my_posts_t * posts) {
-    return posts->qtd_posts;
+int last_valid_id_post(profile_t * profile) {
+    return profile->qtd_posts;
 }
 
 bool_t cria_posts_list(my_posts_t **my_posts) {
 
     (*my_posts) = malloc(sizeof(my_posts_t*));
-    (*my_posts)->qtd_posts = 0;
     (*my_posts)->my_post = NULL;
     (*my_posts)->next_post = NULL;
     (*my_posts)->prev_post = NULL;
@@ -261,9 +261,10 @@ bool_t grava_new_post(my_posts_t **my_posts, post_t *new_post) {
             cria_posts_list(&current);
         previous->next_post = current;
     }
-    grava_post(current->my_post, new_post);
-    (*my_posts) = current;
-    (*my_posts)->qtd_posts++;
+    grava_post(&current->my_post, new_post);
+    if (previous == NULL) {
+        (*my_posts) = current;
+    }
 
     return VERDADEIRO;
 }
@@ -312,8 +313,8 @@ bool_t preenche_data_post(date_t *date){
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
     //preencher com data da gravação
-    (*date).year = tm.tm_year;
-    (*date).month = tm.tm_mon;
+    (*date).year = tm.tm_year + BASE_YEAR;
+    (*date).month = tm.tm_mon + MONTH_CORRECTION;
     (*date).day = tm.tm_mday;
     (*date).hour = tm.tm_hour;
     (*date).minutes = tm.tm_min;
@@ -325,7 +326,7 @@ bool_t preenche_data_post(date_t *date){
 bool_t imprime_data_post(date_t *date){
     if(date == NULL)
         return FALSO;
-    printf("%i/%i/%i - %i:%i:%i", (*date).month, (*date).day, (*date).year, (*date).hour, (*date).minutes, (*date).seconds);
+    printf("Publicado em: %i/%i/%i - %i:%i:%i", (*date).month, (*date).day, (*date).year, (*date).hour, (*date).minutes, (*date).seconds);
 }
 
 

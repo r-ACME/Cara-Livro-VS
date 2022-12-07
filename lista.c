@@ -27,7 +27,6 @@ bool_t lista_cria(my_posts_t **lista) {
     (*lista)->prev_post = NULL;
     (*lista)->my_post = NULL;
     (*lista)->next_post = NULL;
-    (*lista)->qtd_posts = 0;
 }
 
 /**
@@ -49,8 +48,8 @@ bool_t lista_cria_like(lista_likes_t **lista) {
  * @return VERDADEIRO caso a lista esteja vazia ou, caso contrário,
  * retorna FALSO.
  */
-bool_t lista_estaVazia(my_posts_t posts) {
-  return posts.my_post == NULL;
+bool_t lista_estaVazia(my_posts_t *posts) {
+  return posts == NULL;
 }
 
 
@@ -94,13 +93,19 @@ bool_t imprime_post_desativado(post_t *publish){
  */
 bool_t lista_imprime_posts(my_posts_t *user) {
 
-    if(lista_estaVazia(*user)){
+    if(lista_estaVazia(user)){
         return VERDADEIRO;
     }
-    my_posts_t *atual = user;
+    my_posts_t atual = (*user);
 
-    for(atual = user; atual->my_post != NULL; atual = atual->next_post){
-        imprime_data_post(atual->my_post);
+    lista_imprime_posts(atual.next_post);
+
+    if (atual.my_post->active) {
+        printf("No %i\n", atual.my_post->id);
+        printf("Mensagem: %s\n", atual.my_post->info);
+        imprime_data_post(&atual.my_post->publish_at);
+        printf("\nCurtidas: %i\n", atual.my_post->post_likes->qtd_likes);
+
         printf("\n\n");
     }
 
@@ -184,7 +189,6 @@ bool_t lista_deleta_post(my_posts_t *posts, int id) {
     anterior->next_post = atual->next_post;
   }
 
-  posts->qtd_posts--;
   // Libera o espaço alocado pelo atual
   free(atual);
 
@@ -225,7 +229,6 @@ bool_t lista_insere_inicio_post(my_posts_t *posts, post_t* new_post) {
         free(novo);
         return FALSO;
     }
-    (*posts).qtd_posts += 1;
     return VERDADEIRO;
 }
 

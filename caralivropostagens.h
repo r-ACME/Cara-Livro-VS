@@ -22,7 +22,7 @@
 
 
 bool_t criar_postagem(pointer_t* current_user);
-
+bool_t ver_curtir_postagens(pointer_t* current_user, pointer_t* current_profile);
 
 
 
